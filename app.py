@@ -3,7 +3,7 @@ import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # Oppretter en Flask-applikasjon
-app = Flask(__name__, template_folder="./Templates")
+app = Flask(__name__, template_folder="./templates")
 app.secret_key = 'Hei, secret key'  # En tilfeldig nøkkel som brukes for å kryptere sessions (brukerdata som lagres midlertidig).
 
 # Kobler til en global MySQL-database
@@ -16,6 +16,7 @@ conn = mysql.connector.connect(
 
 # Oppretter en global cursor for å kjøre SQL-spørringer
 cursor = conn.cursor(dictionary=True)  # Konfigurerer til å returnere resultater som dictionaries keys (nøkkel-verdi-par).
+
 
 # Rute for innlogging
 @app.route('/login', methods=['POST'])
@@ -40,7 +41,7 @@ def login():
             # Sjekker om passordet stemmer ved hjelp av hashing.
             if check_password_hash(user['passord'], passord):
                 session['brukerID'] = user['brukerID']  # Lagre brukerID i session (midlertidig lagring).
-                return jsonify({"message": "Klarte å logge inn YAY!", "redirect": "/main"}), 200
+                return jsonify({"message": "Klarte å logge inn YAY!", "redirect": "/bestillinger"}), 200
             else:
                 return jsonify({"error": "Feil passord."}), 401
         else:
@@ -54,6 +55,8 @@ def login():
         print(f"Uforventet feil under login: {e}")
         return jsonify({"error": "Det skjedde en uventet feil"}), 500
     
+    
+
 # Rute for å opprette en ny bruker
 @app.route('/create_user', methods=['POST'])
 def create_user():
@@ -100,10 +103,19 @@ def create_user():
 
 @app.route('/sign_up')
 def sign_up():
-    return render_template('signUp.html')  
+    return render_template('Signup.html')  
 
 # Default route (Hjemmeside)
 @app.route('/')
 def home():
     # Viser innloggingssiden.
-    return render_template('logIn.html')
+    return render_template('Login.html')
+
+
+# Starter Flask-applikasjonen
+if __name__ == '__main__':
+    try:
+        app.run(debug=True)  # Kjører appen i debug-modus hvis noe dør
+    except Exception as e:
+        # Logger feil som oppstår når appen starter.
+        print(f"Feilet når starting Flask app: {e}")
