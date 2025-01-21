@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 const result = await response.json(); // Henter suksessdata fra serveren
-                window.location.href = result.redirect || "/main"; // Omadresserer brukeren til kalenderen
+                window.location.href = result.redirect || "/main"; // sender brukeren til main side
             } catch (error) {
                 showMessage(error.message || "Feil e-post eller passord.", "red"); // Viser feilmeldingen i rød tekst
             }

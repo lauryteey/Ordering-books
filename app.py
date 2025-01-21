@@ -8,7 +8,7 @@ app.secret_key = 'Hei, secret key'  # En tilfeldig nøkkel som brukes for å kry
 
 # Kobler til en global MySQL-database
 conn = mysql.connector.connect(
-    host="localhost",         # Databasens adresse (lokal maskin)
+    host="10.2.4.56",         # Databasens adresse (lokal maskin)
     user="oppdrag_user",     # Brukernavnet til databasen.
     password="123",           # Passordet til databasen.
     database="oppdrag"       # Navnet på databasen som brukes.
