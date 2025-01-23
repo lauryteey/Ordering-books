@@ -105,10 +105,13 @@ def create_user():
         return jsonify({"error": "Det oppsto en uventet feil"}), 500
     
 
-
 @app.route('/bestilling', methods=['POST'])
 def sende_bestilling():
     try:
+        # Sjekker om brukeren er logget inn.
+        if 'brukerID' not in session:
+            return jsonify({'error': 'Bruker er ikke logget inn'}), 401
+
         data = request.get_json()  # Henter data fra forespørselen
         print(f"Mottatt data: {data}")  # Debugger for å vise dataene som ble sendt
 
@@ -125,13 +128,14 @@ def sende_bestilling():
         if len(description) > 500:
             return jsonify({'error': 'Beskrivelsen kan maks være 500 tegn'}), 400
 
+        brukerID = session['brukerID']  # Henter brukerID fra session
+
         # Legger inn bestillingen i databasen
         query = """
             INSERT INTO arbeid_bestilling (brukerID, BESKRIVELSE, oversett_fra, oversett_til, leveringstid)
             VALUES (%s, %s, %s, %s, %s)
         """
-        brukerid = 1  # Hardkodet for enkelhetens skyld (brukeren som bestiller)
-        values = (brukerid, description, translate_from, translate_to, delivery_time)
+        values = (brukerID, description, translate_from, translate_to, delivery_time)
 
         cursor.execute(query, values)  # Kjører SQL-spørringen
         print(f"Query kjørt med verdier: {values}")  # Debug
@@ -147,6 +151,7 @@ def sende_bestilling():
         # Håndterer uventede feil
         print(f"Uventet feil: {e}", exc_info=True)
         return jsonify({"error": "Det oppsto en uventet feil"}), 500
+
 
 # Funksjon for å validere at passordet er sterkt nok
 def er_passord_sikkert(password):
