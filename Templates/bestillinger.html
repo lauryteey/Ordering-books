@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestilling</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bestillinger.css')}}">
+</head>
+
+<body>
+
+    <form class="container" id="bestillingForm">
+        <h1>Hvilken språk ønsker du å oversette?</h1>
+
+        <div class="form-group">
+            <label for="translate_from">Oversett fra</label>
+            <input type="text" id="translate_from" name="translate_from"
+                placeholder="F. eks Spansk" maxlength="30" required>
+            <small>Oppgi språket (maks 30 tegn).</small>
+        </div>
+
+        <div class="form-group">
+            <label for="translate_to">Oversett til</label>
+            <input type="text" id="translate_to" name="translate_to" placeholder=" F.eks Tysk"
+                maxlength="30" required>
+            <small>Oppgi språket (maks 30 tegn).</small>
+        </div>
+
+        <!-- beskrivelse -->
+        <div class="form-group">
+            <label for="description">Beskrivelse av boken</label>
+            <textarea id="description" name="description"
+                placeholder="Skriv en kort beskrivelse av boken eller innholdet som skal oversettes" maxlength="500"
+                rows="5" required></textarea>
+            <small>Maks 500 tegn.</small>
+        </div>
+
+
+        <div class="form-group">
+            <label for="delivery_time">Leveringstid</label>
+            <select id="delivery_time" name="delivery_time">
+                <option value="">Velg leveringstid</option>
+                <option value="Express 24 timer">Express 24 timer</option>
+                <option value="1">Opptil 3 dager</option>
+                <option value="2">Opptil 7 dager</option>
+                <option value="3">Når som helst</option>
+            </select>
+        </div>
+
+        <div class="apply-button">
+            <button type="submit">Bestille<s</button>
+        </div>
+        <div id="message" class="error-message"></div> <!-- Container for meldingen -->
+    </form>
+
+    <script src="{{url_for('static', filename='js/bestillinger.js')}}"></script>
+
+</body>
+
+</html>

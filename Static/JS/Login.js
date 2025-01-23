@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Sjekker om e-post og passord er fylt ut
             if (!email || !password) {
-                showMessage("Vennligst fyll inn både e-post og passord.", "red"); // Viser feilmelding i rød tekst
+                showMessage("Vennligst fyll inn både e-post og passord.", "red"); 
                 return; // Stopper funksjonen hvis felter mangler
             }
 
@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 const result = await response.json(); // Henter suksessdata fra serveren
-                window.location.href = result.redirect || "/main"; // sender brukeren til main side
+                window.location.href = result.redirect || "/main"; // Sender brukeren til hovedsiden etter vellykket innlogging
             } catch (error) {
-                showMessage(error.message || "Feil e-post eller passord.", "red"); // Viser feilmeldingen i rød tekst
+                showMessage(error.message || "Feil e-post eller passord.", "red"); // Viser feilmeldingen 
             }
         });
     }
@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (loginMessage) {
             loginMessage.textContent = message; // Setter meldingsteksten
             loginMessage.style.color = color; // Angir fargen på meldingen
+            loginMessage.style.paddingTop = "10px"; // Legger avstand mellom input og feilmelding
+            loginMessage.style.paddingBottom = "10px"; // Legger avstand på bunnen
         }
     }
 });

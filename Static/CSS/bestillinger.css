@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--Hvitt-ikke-så-hvitt);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: segoe UI;
+}
+
+:root {
+    --grønn: #59e259;
+    --white-nonwhite: #f1e5e2;
+    --blå-lys: #007172;
+    --rblå: #025259;
+    --sort: #191406;
+    --grønn-sommer: #cce8b8cb;
+    --hvitt: #fff;
+    --oransj: #F29325;
+    --oransj-mørk: #D94F04;
+    --dark-grey: #413d3d;
+    --dark-grønn: #4bce4b;
+    --Hvitt-ikke-så-hvitt: #f8f9fa;
+}
+
+.container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    color: var(--dark-grey);
+    font-family: segoe UI;
+
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding: 14px 10px;
+
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--dark-grey);
+}
+
+select {
+    padding: 13px 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    width: 500px;
+    color: #413d3d;
+}
+
+
+
+.filters button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+.filters button:hover {
+    background-color: #e9ecef;
+}
+
+.apply-button {
+    margin-top: 30px;
+}
+
+.apply-button button {
+    background-color: var(--sort);
+    color: #fff;
+    border: none;
+    padding: 15px 50px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 30px;
+}
+
+.apply-button button:hover {
+    background-color: var(--dark-grey);
+}
+
+textarea {
+    width: 400px;
+    height: 100px;
+    padding:15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: segoe UI;
+    resize: vertical;
+}
+
+#translate_from{
+    width: 200px;
+    height: 10px;
+    padding:15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: segoe UI;
+    resize: vertical;
+    padding-right: 100px;
+    align-items: center;
+    padding-left: 10px;
+
+}
+
+#translate_to{
+    width: 200px;
+    height: 10px;
+    padding:15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: segoe UI;
+    resize: vertical;
+    padding-left: 15px;
+    padding-right: 100px;
+    align-items: center;
+}
+

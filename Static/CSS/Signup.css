@@ -12,12 +12,13 @@
     --oransj-mørk: #D94F04;
     --dark-grey:#413d3d;
     --dark-grønn: #4bce4b;
+    --Hvitt-ikke-så-hvitt: #f8f9fa;
 }
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: var(--white-nonwhite); 
+    font-family: segoe UI;
+    background: var(--Hvitt-ikke-så-hvitt); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,13 +52,14 @@ body {
 }
 
 .signup-container button {
-    background-color: var(--grønn); 
-    color: var(--hvitt); 
-    padding: 10px 40px;
+
+    background-color: var(--grønn);
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 15px 50px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 18px;
+    border-radius: 30px;
 }
 
 .signup-container button:hover {

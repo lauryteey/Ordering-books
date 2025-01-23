@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--Hvitt-ikke-så-hvitt);
+    font-family: segoe UI;
+}
+
+:root {
+
+    --grønn: #59e259;
+    --white-nonwhite: #f1e5e2;
+    --blå-lys: #007172;
+    --rblå: #025259;
+    --sort:#191406;
+    --grønn-sommer:#cce8b8cb;
+    --hvitt: #fff;
+    --oransj: #F29325;
+    --oransj-mørk: #D94F04;
+    --dark-grey:#413d3d;
+    --dark-grønn: #4bce4b;
+    --Hvitt-ikke-så-hvitt: #f8f9fa;
+}
+
+#bekreftelse-ikon{
+    padding-right: 10px;
+}
+
+.bekreftelse-tekst{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    color: var(--sort);
+    margin-bottom: 20px;
+    font-family: segoe UI;
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    background-color: var(--sort);
+    color: white;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--dark-grey);
+}
