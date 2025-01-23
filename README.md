@@ -32,6 +32,7 @@ Dette laster ned hele prosjektet til din maskin.
 
 Men du kan også last ned ZIP-filen og pakk den ut.
 
+---
 2. Installer nødvendige biblioteker: Gå til prosjektmappen som du nettopp klonet
 
 ````bash
@@ -60,7 +61,20 @@ Hvis filen requirements.txt mangler, kan du installere de viktigste manuelt:
 pip install flask mysql-connector
 pip install Flask
 ````
-Deretter i terminalen gå til mappen der filene ligger og start applikasjonen:
+---
+
+3. Sjekk MariaDB-databasen: siden databasen allerede er satt opp, må du forsikre deg om at Flask-applikasjonen er konfigurert til å koble til den riktig. Åpne konfigurasjonen for databasen i ````app.py```` filen.
+
+Sørg for at host, brukernavn, passord, og databasenavn er riktige. Host er satt til en spesifikk IP-adresse, som betyr at applikasjonen kobler seg til en MariaDB som ligger på den IP-en.
+
+Hvis databasen er på en annen server eller maskin, må du oppdatere denne IP-adressen til den riktige adresse.
+
+Hvis databasen kjører på din egen datamaskin, kan du bruke localhost i stedet for IP-adressen.
+Hvis du bruker en ekstern server som Raspberry Pi er, må du sørge for at IP-adressen er riktig.
+
+---
+
+Deretter i terminalen gå til mappen der filen ````app.py```` ligger og start applikasjonen ved bruk av:
 `````bash
 python app.py
 ```````
