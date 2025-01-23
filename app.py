@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__, template_folder="./templates")
 app.secret_key = 'Hei, secret key'  # En tilfeldig nøkkel som brukes for å kryptere brukerdata (sessions).
 
-# Kobler til en MySQL-database
+# Kobler til en Mariadb-database
 conn = mysql.connector.connect(
     host="10.0.0.19",         # IP-adressen til databasen (her er det en lokal maskin).
     user="oppdrag_user",     # Brukernavnet som brukes til å koble til databasen.
