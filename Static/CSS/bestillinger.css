@@ -1,8 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--Hvitt-ikke-så-hvitt);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -139,5 +144,82 @@ textarea {
     padding-left: 15px;
     padding-right: 100px;
     align-items: center;
+}
+
+
+/*Header and footer styling*/
+header {
+    background-color: var(--Hvitt-ikke-så-hvitt);
+    color: var(--sort);
+    padding: 15px 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: var(--sort);
+    text-decoration: none;
+    font-size: 1rem;
+    
+}
+
+.nav-links a:hover {
+    background-color: #191406;
+    color: var(--hvitt);
+    padding-top: 7px;
+    padding-bottom: 9px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+/* Content (adjust spacing to avoid overlap with header and footer) */
+.content {
+    padding-top: 500px; /* Add space below the fixed header */
+    padding-bottom: 50px; /* Add space above the fixed footer */
+    margin: 0 auto;
+    max-width: 800px; /* Center the content and set a max width */
+}
+
+/* Footer */
+footer {
+    background-color: var(--sort);
+    color: var(--hvitt);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: end;
+    
 }
 

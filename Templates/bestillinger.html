@@ -10,49 +10,70 @@
 
 <body>
 
-    <form class="container" id="bestillingForm">
-        <h1>Hvilken språk ønsker du å oversette?</h1>
-
-        <div class="form-group">
-            <label for="translate_from">Oversett fra</label>
-            <input type="text" id="translate_from" name="translate_from"
-                placeholder="F. eks Spansk" maxlength="30" required>
-            <small>Oppgi språket (maks 30 tegn).</small>
+    <header>
+        <div class="header-container">
+            <h1>Velkommen til bestillinger</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Om osss</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="form-group">
-            <label for="translate_to">Oversett til</label>
-            <input type="text" id="translate_to" name="translate_to" placeholder=" F.eks Tysk"
-                maxlength="30" required>
-            <small>Oppgi språket (maks 30 tegn).</small>
-        </div>
+    <div class="content">
 
-        <!-- beskrivelse -->
-        <div class="form-group">
-            <label for="description">Beskrivelse av boken</label>
-            <textarea id="description" name="description"
-                placeholder="Skriv en kort beskrivelse av boken eller innholdet som skal oversettes" maxlength="500"
-                rows="5" required></textarea>
-            <small>Maks 500 tegn.</small>
-        </div>
+        <form class="container" id="bestillingForm">
+            <h1>Hvilken språk ønsker du å oversette?</h1>
+
+            <div class="form-group">
+                <label for="translate_from">Oversett fra</label>
+                <input type="text" id="translate_from" name="translate_from" placeholder="F. eks Spansk" maxlength="30"
+                    required>
+                <small>Oppgi språket (maks 30 tegn).</small>
+            </div>
+
+            <div class="form-group">
+                <label for="translate_to">Oversett til</label>
+                <input type="text" id="translate_to" name="translate_to" placeholder=" F.eks Tysk" maxlength="30"
+                    required>
+                <small>Oppgi språket (maks 30 tegn).</small>
+            </div>
+
+            <!-- beskrivelse -->
+            <div class="form-group">
+                <label for="description">Bok å oversette</label>
+                <textarea id="description" name="description"
+                    placeholder="Skriv boken som skal oversettes og legg til viktig om informasjon hvis det er nødvendig"
+                    maxlength="500" rows="5" required></textarea>
+                <small>Maks 500 tegn.</small>
+            </div>
 
 
-        <div class="form-group">
-            <label for="delivery_time">Leveringstid</label>
-            <select id="delivery_time" name="delivery_time">
-                <option value="">Velg leveringstid</option>
-                <option value="Express 24 timer">Express 24 timer</option>
-                <option value="1">Opptil 3 dager</option>
-                <option value="2">Opptil 7 dager</option>
-                <option value="3">Når som helst</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="delivery_time">Leveringstid</label>
+                <select id="delivery_time" name="delivery_time">
+                    <option value="">Velg leveringstid</option>
+                    <option value="Express 24 timer">Express 24 timer</option>
+                    <option value="1">Opptil 3 dager</option>
+                    <option value="2">Opptil 7 dager</option>
+                    <option value="3">Når som helst</option>
+                </select>
+            </div>
 
-        <div class="apply-button">
-            <button type="submit">Bestille<s</button>
-        </div>
-        <div id="message" class="error-message"></div> <!-- Container for meldingen -->
-    </form>
+            <div class="apply-button">
+                <button type="submit">Bestille</button>
+            </div>
+            <div id="message" class="error-message"></div> <!-- Container for meldingen -->
+
+        </form>
+
+    </div>
+    <footer>
+        <p>&copy; 2025 Bestilling. All Rights Reserved.</p>
+    </footer>
 
     <script src="{{url_for('static', filename='js/bestillinger.js')}}"></script>
 

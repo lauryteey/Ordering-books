@@ -9,7 +9,7 @@ app.secret_key = 'Hei, secret key'  # En tilfeldig nøkkel som brukes for å kry
 
 # Kobler til en Mariadb-database
 conn = mysql.connector.connect(
-    host="10.0.0.19",         # IP-adressen til databasen (her er det en lokal maskin).
+    host="10.2.4.56",         # IP-adressen til databasen (her er det en lokal maskin).
     user="oppdrag_user",     # Brukernavnet som brukes til å koble til databasen.
     password="123",           # Passordet til databasen.
     database="oppdrag"       # Navnet på databasen som brukes

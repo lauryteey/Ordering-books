@@ -48,7 +48,7 @@ button {
     border: none;
     background-color: var(--sort);
     color: white;
-    border-radius: 0px;
+    border-radius: 25px;
     cursor: pointer;
 }
 
