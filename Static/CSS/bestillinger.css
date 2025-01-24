@@ -202,12 +202,12 @@ header {
     transition: 0.2s;
 }
 
-/* Content (adjust spacing to avoid overlap with header and footer) */
+/* Content (Hindrer overlap med header og  footer)*/
 .content {
-    padding-top: 500px; /* Add space below the fixed header */
-    padding-bottom: 50px; /* Add space above the fixed footer */
+    padding-top: 500px; 
+    padding-bottom: 50px; 
     margin: 0 auto;
-    max-width: 800px; /* Center the content and set a max width */
+    max-width: 800px; 
 }
 
 /* Footer */

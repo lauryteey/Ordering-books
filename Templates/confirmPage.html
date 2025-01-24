@@ -9,12 +9,19 @@
 </head>
 
 <body>
-    <img src="{{ url_for('static', filename='Icons_SVG/confirm-svgrepo-com.svg') }}" id="bekreftelse-ikon" alt="Bekreftelse Ikon" width="150" height="150">
+    <img src="{{ url_for('static', filename='Icons_SVG/confirm-svgrepo-com.svg') }}" id="bekreftelse-ikon"
+        alt="Bekreftelse Ikon" width="150" height="150">
 
     <h1>Takk for bestillingen!</h1>
-    <p class="bekreftelse-tekst">Din oversettelsesforespørsel er sendt inn. Du får en ny e-post når oversettelsen er klart for å sendes.</p>
+    <p class="bekreftelse-tekst">Din oversettelsesforespørsel er sendt inn. Du får en ny e-post når oversettelsen er
+        klart for å sendes.</p>
     <button onclick="goBack()">Bestill ny oversettelse</button>
 
+    <div class="logUt-knapp">
+
+        <button onclick="logut()">Log ut</button>
+
+    </div>
 
     <script src="{{url_for('static', filename='js/confirmPage.js')}}"></script>
     <script src="{{url_for('static', filename='js/bestillinger.js')}}"></script>

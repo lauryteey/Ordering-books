@@ -2,6 +2,7 @@ from flask import Flask, jsonify, render_template, request, session
 import mysql.connector
 import re
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask import session, redirect, url_for
 
 # Lager en Flask-applikasjon
 app = Flask(__name__, template_folder="./templates")
@@ -186,6 +187,14 @@ def bestilling():
 def bekreftelse():
     # Viser bekreftelsessiden
     return render_template('confirmPage.html')
+
+@app.route('/logout')
+def logout():
+    # data fra session blir fjern
+    session.clear()
+    # Redirect til login page
+    return redirect(url_for('home'))
+
 
 
 # Starter Flask-applikasjonen

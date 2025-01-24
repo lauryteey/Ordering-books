@@ -55,3 +55,7 @@ button {
 button:hover {
     background-color: var(--dark-grey);
 }
+
+.logUt-knapp{
+padding-top: 15px;
+ }
